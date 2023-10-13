@@ -1,0 +1,19 @@
+.loading-bg-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  position: relative;
+  right: 0px;
+}
+
+@keyframes right-to-center-loader-anime {
+  0% {
+    right: -100vw;
+  }
+  100% {
+    right: 0px;
+  }
+}

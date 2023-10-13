@@ -1,0 +1,39 @@
+.went-wrong-main-container {
+  /* border: 2px solid red; */
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.went-wrong-body-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.something-went-wrong-heading {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #262626;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.try-again-button {
+  height: 40px;
+  width: 110px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #4094ef;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}

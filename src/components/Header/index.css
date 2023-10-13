@@ -1,0 +1,381 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 2px solid red; */
+}
+
+.viewport-100 {
+  min-height: 100vh;
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .nav {
+    width: 70%;
+    padding: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+.nav-first-container {
+  display: flex;
+  align-items: center;
+}
+
+.nav-img {
+  height: 40px;
+  width: 80px;
+  margin-right: 15px;
+}
+
+@media screen and (max-width: 300px) {
+  .nav-img {
+    height: 26px;
+    width: 54px;
+    margin-right: 15px;
+  }
+}
+
+.insta-share-heading {
+  font-family: Roboto;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #262626;
+}
+
+.nav-second-container {
+  display: flex;
+  align-items: center;
+}
+
+.nav-third-container {
+  /* border: 2px solid red; */
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-third-container {
+    display: none;
+  }
+}
+
+.search-bar-container-lg {
+  border: 1px solid #dbdbdb;
+  height: 40px;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .search-bar-container-lg {
+    width: 95%;
+  }
+}
+
+.search-bar-container-sm {
+  position: relative;
+  left: 0px;
+  border: 1px solid #dbdbdb;
+  height: 50px;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  animation: sm-search-bar-fall-down 0.3s ease-in-out;
+}
+
+@keyframes sm-search-bar-fall-down {
+  0% {
+    left: -100vw;
+  }
+  100% {
+    left: 0px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .search-bar-container-sm {
+    width: 95%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .search-bar-container-sm {
+    display: none;
+  }
+}
+
+.search-input {
+  height: 100%;
+  outline: none;
+  padding-left: 10px;
+  font-size: 16px;
+  color: #262626;
+  border: none;
+  width: 70%;
+}
+
+@media screen and (max-width: 768px) {
+  .search-input {
+    width: 85%;
+  }
+}
+
+.search-btn {
+  height: 100%;
+  width: 40px;
+  border: none;
+  width: 30%;
+}
+
+@media screen and (max-width: 768px) {
+  .search-btn {
+    width: 15%;
+  }
+}
+
+.search-icon {
+  font-size: 14px;
+}
+
+.nav-lg-options-container {
+  /* border: 2px solid green; */
+  display: flex;
+  align-items: center;
+}
+
+.d-none {
+  display: none;
+}
+
+.d-block {
+  display: block;
+}
+
+.hamburger-menu-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.hamburger-menu-icon {
+  height: 30px;
+  width: 35px;
+  padding: 2px;
+}
+
+@media screen and (min-width: 768px) {
+  .hamburger-menu-btn {
+    display: none;
+  }
+}
+
+.hamburger-menu-icon:hover {
+  padding: 0px;
+}
+
+/* this class and keyframe is for to fall the ham container. */
+
+.ham-option-container {
+  position: relative;
+  top: 0px;
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  animation: ham-menu-fall-down 0.3s ease-in-out;
+}
+
+@keyframes ham-menu-fall-down {
+  0% {
+    top: -125px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+/* .......................................................... */
+
+@media screen and (min-width: 320px) {
+  .ham-option-container {
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .ham-option-container {
+    display: none;
+  }
+}
+
+.ham-option-item {
+  margin: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.ham-option-item-btn {
+  border: none;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #262626;
+  background: transparent;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 500px) {
+  .ham-option-item-btn {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .ham-option-item-btn {
+    font-size: 20px;
+  }
+}
+
+.ham-option-item-btn:hover {
+  color: #4094ef;
+}
+
+.logout-btn {
+  border: none;
+  height: 35px;
+  width: 100px;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0em;
+  background-color: #4094ef;
+  color: #fff;
+  border-radius: 3px;
+  margin-left: 5px;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  font-size: 14px;
+}
+
+.close-btn {
+  border: none;
+  background: none;
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+  width: 30px;
+}
+
+.close-icon {
+  width: 24px;
+  height: 24px;
+  top: 84px;
+  left: 312px;
+  padding: 2px, 2px, 2px, 2px;
+}
+
+.close-icon:hover {
+  height: 28px;
+  width: 28px;
+  cursor: pointer;
+}
+
+.selected-option-class {
+  color: #4094ef;
+}
+
+.searched-results-container {
+  /* border: 2px solid red; */
+
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .searched-results-container {
+    width: 70%;
+    align-self: center;
+  }
+}
+
+.searched-result-un-order-container {
+  /* border: 2px solid blue; */
+  position: relative;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  animation: fall-down-searched-result 0.3s ease-in-out;
+}
+
+@keyframes fall-down-searched-result {
+  0% {
+    left: -100vw;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+/* 8888888888888888888888 */
+.went-wrong-main-container {
+  /* border: 2px solid red; */
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.went-wrong-body-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.something-went-wrong-heading {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #262626;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.try-again-button {
+  height: 40px;
+  width: 110px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #4094ef;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
