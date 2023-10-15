@@ -147,7 +147,7 @@ class MyProfile extends Component {
 
     const renderProfileFirstContainerInSmDevices = () => (
       <div className="profile-first-container">
-        <img className="profile-image" alt="user profile" src={profilePic} />
+        <img className="profile-image" alt="my profile" src={profilePic} />
         {renderPostFollowerFollowingCountDetailsContainer()}
       </div>
     )
@@ -156,7 +156,7 @@ class MyProfile extends Component {
       <li key={eachItem.id} className="profile-story-item">
         <img
           src={eachItem.image}
-          alt="user story"
+          alt="my story"
           className="profile-story-img"
         />
       </li>
@@ -172,7 +172,7 @@ class MyProfile extends Component {
       <li key={eachItem.id} className="profile-post-item">
         <img
           src={eachItem.image}
-          alt="user post"
+          alt="my post"
           className="profile-post-image"
         />
       </li>

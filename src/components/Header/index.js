@@ -1,3 +1,4 @@
+/* eslint-disable */
 // Importing the all necessary third-party package or build module.
 import {Component} from 'react'
 import {Link, withRouter} from 'react-router-dom'
@@ -372,9 +373,9 @@ class Header extends Component {
                 value={searchInput}
                 onChange={event => {
                   // handling the different search view.
-                  //   if (searchInput === '') {
-                  //     this.setState({searchApiStatus: apiStatusConstants.initial})
-                  //   }
+                  if (searchInput === '') {
+                    this.setState({searchApiStatus: apiStatusConstants.initial})
+                  }
                   onChangeSearchInput(event)
                 }}
               />
@@ -385,7 +386,7 @@ class Header extends Component {
                   getSearchedData()
                 }}
               >
-                <FaSearch className="search-icon" />
+                <FaSearch className="search-icon" testid="searchIcon" />
               </button>
             </div>
           )
@@ -400,9 +401,9 @@ class Header extends Component {
                 value={searchInput}
                 onChange={event => {
                   // handling the different search views.
-                  //   if (searchInput === '') {
-                  //     this.setState({searchApiStatus: apiStatusConstants.initial})
-                  //   }
+                  if (searchInput === '') {
+                    this.setState({searchApiStatus: apiStatusConstants.initial})
+                  }
                   //   this condition is for hide the ham menu while searchInput !== ""
                   //   if (searchInput !== '') {
                   //     this.setState({showHamMenu: false})
@@ -414,6 +415,7 @@ class Header extends Component {
                 type="button"
                 className="search-btn"
                 onClick={onClickLensButton}
+                testid="searchIcon"
               >
                 <FaSearch className="search-icon" />
               </button>
@@ -422,7 +424,21 @@ class Header extends Component {
 
           // This function return the appropriate search views.
           const renderSearchRelatedData = () => {
-            console.log(1)
+            if (
+              searchInput !== '' &&
+              searchApiStatus === apiStatusConstants.initial
+            ) {
+              return <SearchInitialView />
+            }
+            if (searchApiStatus === apiStatusConstants.inProgress) {
+              return <LoadingLoader />
+            }
+            if (
+              searchApiStatus === apiStatusConstants.success &&
+              searchedDataList.length === 0
+            ) {
+              return <NoSearchResultView />
+            }
             return (
               <ul className="searched-result-un-order-container">
                 {searchedDataList.map(eachObj => (

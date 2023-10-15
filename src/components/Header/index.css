@@ -379,3 +379,12 @@
   outline: none;
   cursor: pointer;
 }
+
+/* pseudo class for search input modification */
+/* Style the search icon (magnifying glass) */
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-clear-button {
+  font-size: 40px;
+  cursor: pointer;
+}

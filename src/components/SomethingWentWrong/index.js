@@ -24,7 +24,7 @@ class SomethingWentWrong extends Component {
         <div className="went-wrong-body-container">
           <img
             src="https://res.cloudinary.com/dctfbwk0m/image/upload/v1697013860/Group_7737_aebkia.png"
-            alt="something went wrong"
+            alt="failure view"
           />
           <h1 className="something-went-wrong-heading">
             Something went wrong. Please try again

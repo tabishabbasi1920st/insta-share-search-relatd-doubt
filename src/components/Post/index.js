@@ -1,3 +1,4 @@
+/* eslint-disable */
 import {Component} from 'react'
 import {BsHeart} from 'react-icons/bs'
 import {FcLike} from 'react-icons/fc'
@@ -47,27 +48,33 @@ class Post extends Component {
 
           const {caption, imageUrl} = postDetails
 
+          const reloadPage = () => {
+            const uniqueKey = setInterval(() => {
+              window.location.reload()
+              clearInterval(uniqueKey)
+            }, 0.1)
+          }
+
           const renderDpAndUsernameContainer = () => (
             <div className="post-username-and-dp-container">
               <Link to={`/users/${userId}`}>
                 <img
                   src={profilePic}
-                  alt="user profile"
+                  alt="post author profile"
                   className="home-user-profile-pic"
+                  onMouseUp={reloadPage}
                 />
               </Link>
               <Link to={`/users/${userId}`}>
-                <p className="home-user-post-username">{userName}</p>
+                <p className="home-user-post-username" onMouseUp={reloadPage}>
+                  {userName}
+                </p>
               </Link>
             </div>
           )
 
           const renderUserPostImage = () => (
-            <img
-              src={imageUrl}
-              alt="user post"
-              className="home-user-post-img"
-            />
+            <img src={imageUrl} alt="post" className="home-user-post-img" />
           )
 
           const postLikeRequest = async likedStatus => {
@@ -100,30 +107,34 @@ class Post extends Component {
           const renderResponseButtonsContainer = () => (
             <div className="home-post-details-container">
               {isPostLike ? (
-                <button type="button" className="response-buttons">
-                  <FcLike
-                    fontSize={30}
-                    onClick={() => {
-                      postLikeRequest(false)
-                      this.setState({isPostLike: false})
-                      this.setState(prevState => ({
-                        likeIncrement: prevState.likeIncrement - 1,
-                      }))
-                    }}
-                  />
+                <button
+                  type="button"
+                  className="response-buttons"
+                  onClick={() => {
+                    postLikeRequest(false)
+                    this.setState({isPostLike: false})
+                    this.setState(prevState => ({
+                      likeIncrement: prevState.likeIncrement - 1,
+                    }))
+                  }}
+                  testid="likeIcon"
+                >
+                  <FcLike fontSize={30} />
                 </button>
               ) : (
-                <button type="button" className="response-buttons">
-                  <BsHeart
-                    fontSize={25}
-                    onClick={() => {
-                      postLikeRequest(true)
-                      this.setState({isPostLike: true})
-                      this.setState(prevState => ({
-                        likeIncrement: prevState.likeIncrement + 1,
-                      }))
-                    }}
-                  />
+                <button
+                  type="button"
+                  className="response-buttons"
+                  onClick={() => {
+                    postLikeRequest(true)
+                    this.setState({isPostLike: true})
+                    this.setState(prevState => ({
+                      likeIncrement: prevState.likeIncrement + 1,
+                    }))
+                  }}
+                  testid="unLikeIcon"
+                >
+                  <BsHeart fontSize={25} />
                 </button>
               )}
               <button type="button" className="response-buttons">
@@ -153,7 +164,7 @@ class Post extends Component {
           )
 
           return (
-            <li className="post-item">
+            <li className="post-item" testid="postItem">
               {renderDpAndUsernameContainer()}
               {renderUserPostImage()}
               {renderResponseButtonsContainer()}
