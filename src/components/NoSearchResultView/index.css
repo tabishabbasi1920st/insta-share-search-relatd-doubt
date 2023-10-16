@@ -1,0 +1,56 @@
+.not-found-search-view-container {
+  position: relative;
+  /* border: 2px solid black; */
+  left: 0px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  animation: slide-left-to-center 0.3s ease-in-out;
+}
+
+@keyframes slide-left-to-center {
+  0% {
+    left: -100vw;
+  }
+  100% {
+    left: 0px;
+  }
+}
+
+.not-found-search-view-image {
+  height: 190px;
+  width: 210px;
+  margin-bottom: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .not-found-search-view-image {
+    height: 230px;
+    width: 290px;
+    margin-bottom: 10px;
+  }
+}
+
+.search-not-found-heading {
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #262626;
+  margin-bottom: 10px;
+}
+
+.not-found-search-view-para {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #989898;
+}
