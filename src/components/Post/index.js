@@ -48,6 +48,16 @@ class Post extends Component {
 
           const {caption, imageUrl} = postDetails
 
+<<<<<<< HEAD
+=======
+          const reloadPage = () => {
+            const uniqueKey = setInterval(() => {
+              window.location.reload()
+              clearInterval(uniqueKey)
+            }, 0.1)
+          }
+
+>>>>>>> d4280020625cb47ad5d3fafed5b0a5df4da6d764
           const renderDpAndUsernameContainer = () => (
             <div className="post-username-and-dp-container">
               <Link to={`/users/${userId}`}>
@@ -55,10 +65,20 @@ class Post extends Component {
                   src={profilePic}
                   alt="post author profile"
                   className="home-user-profile-pic"
+<<<<<<< HEAD
                 />
               </Link>
               <Link to={`/users/${userId}`}>
                 <p className="home-user-post-username">{userName}</p>
+=======
+                  onMouseUp={reloadPage}
+                />
+              </Link>
+              <Link to={`/users/${userId}`}>
+                <p className="home-user-post-username" onMouseUp={reloadPage}>
+                  {userName}
+                </p>
+>>>>>>> d4280020625cb47ad5d3fafed5b0a5df4da6d764
               </Link>
             </div>
           )

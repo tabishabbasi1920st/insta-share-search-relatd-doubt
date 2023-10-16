@@ -384,7 +384,10 @@ class Header extends Component {
                 className="search-btn"
                 onClick={() => {
                   getSearchedData()
+<<<<<<< HEAD
                   onClickLensButton
+=======
+>>>>>>> d4280020625cb47ad5d3fafed5b0a5df4da6d764
                 }}
               >
                 <FaSearch className="search-icon" testid="searchIcon" />
@@ -415,10 +418,17 @@ class Header extends Component {
               <button
                 type="button"
                 className="search-btn"
+<<<<<<< HEAD
                 onClick={(onClickLensButton, getSearchedData())}
                 testid="searchIcon"
               >
                 <FaSearch className="search-icon" testid="searchIcon" />
+=======
+                onClick={onClickLensButton}
+                testid="searchIcon"
+              >
+                <FaSearch className="search-icon" />
+>>>>>>> d4280020625cb47ad5d3fafed5b0a5df4da6d764
               </button>
             </div>
           )
